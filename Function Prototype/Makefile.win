@@ -1,0 +1,28 @@
+# Project: Function Prototype
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "Function\ Prototype.o"
+LINKOBJ  = "Function Prototype.o"
+LIBS     = -L"X:/Dev-Cpp/MinGW64/lib" -L"X:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"X:/Dev-Cpp/MinGW64/include" -I"X:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"X:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"X:/Dev-Cpp/MinGW64/include" -I"X:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"X:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"X:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Function Prototype.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"Function\ Prototype.o": Function\ Prototype.cpp
+	$(CPP) -c "Function Prototype.cpp" -o "Function Prototype.o" $(CXXFLAGS)
